@@ -3,6 +3,6 @@ class SearchController < ApplicationController
   end
 
   def show
-  @results = Spotify.query([params])
+  @results = Spotify.artist_search(params[:searchbox])
   end
 end
