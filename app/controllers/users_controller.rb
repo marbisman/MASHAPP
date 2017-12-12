@@ -4,14 +4,6 @@ class UsersController < ApplicationController
       @user = User.new
     end
 
-  # def spotify
-  #     @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-  #     hash = @spotify_user.to_hash
-  #     puts hash
-  #     puts @spotify_user.display_name
-  #     render 'show'
-  #   end
-
   def create
     if User.find_by({:email => user_params[:email]}) != nil
     flash[:error] = "User name already exists. Please try again"
