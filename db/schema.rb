@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206001407) do
+ActiveRecord::Schema.define(version: 20171212200200) do
 
   create_table "authorizations", force: :cascade do |t|
     t.string "provider"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20171206001407) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "access_token"
+    t.string "refresh_token"
   end
 
 end

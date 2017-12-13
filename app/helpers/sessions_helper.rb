@@ -9,4 +9,15 @@ module SessionsHelper
   def logout
     @current_user = session[:user_id] = nil
   end
+
+  def login_spotify_user(user)
+    # login to our app, not spotify
+    session[:spotify_user] = user
+    @spotify_user = user
+  end
+
+  def current_spotify_user
+    @spotify_user ||= session[:spotify_user]
+  end
+
 end
