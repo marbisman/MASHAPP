@@ -1,12 +1,8 @@
 class SearchController < ApplicationController
+require('rspotify')
 
   def index
-    if params[:query]
-      q = URI.encode(params[:query])
-      search_type = URI.encode(params[:choice].first)
-      logger.info("Spotify query submitted: " + search_type)
-      @results = Spotify.search(search_type, q)
-    end
+    @search = {}
   end
 
   def create
@@ -16,7 +12,7 @@ class SearchController < ApplicationController
   end
 
   def show
-  @results = Spotify.artist_search(params[:search])
+  @results = Spotify.artist_search(params[:search]) 
   end
 
   def update
@@ -25,6 +21,23 @@ class SearchController < ApplicationController
   end
 
   def destroy
+  end
+
+  def search_harder
+    puts "SEARCH HARDER CALLED"
+    if params[:query]
+      q = URI.encode(params[:query])
+      search_type = URI.encode(params[:choice].first)
+      logger.info("Spotify query submitted: " + search_type)
+      @results = RSpotify::Artist.search(q)
+      require('pp')
+      pp @results
+      render 'results'
+    else
+      render 'index'
+      flash[:notice] = "Search incomplete, please try again"
+    end
+
   end
 
 end

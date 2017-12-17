@@ -14,14 +14,20 @@ class Spotify
     p 'Artist search ...'
     response = RSpotify::Artist.search(query)
     p response.first.albums.first.tracks
-    response
+    return response
   end
 
   def self.track_search(query)
-    @track = RSpotify::Track.search(query)
+    p 'Track search ...'
+    response = RSpotify::Track.search(query)
+    p response.first.albums.first.tracks
+    return response
   end
 
   def self.album_search(query)
-    @albums = RSpotify::Album.search(query)
+    p 'Album search ...'
+    response = RSpotify::Album.search(query)
+    p response.first.albums.first.tracks
+    return response
   end
 end

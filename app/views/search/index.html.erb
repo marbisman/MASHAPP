@@ -1,15 +1,38 @@
-<h1>Collection Builder</h1>
-<p>Search Spotify for tracks to add to your new playlists!</p>
+<h3>Search Spotify for tracks to add to your new playlists!</h3>
 
-<%= form_with url: search_path, html: { class: "form" } do |f| %>
-    <div class="form-group col-xs-4">
+<form class="spotifySearchForm">
+
+<div class="row">
+  <div class="form-group">
+    <%= form_with url: '/search_harder', html: { class: "form" } do |f| %>
+    <div class="form-check col-xs-8">
       <%= f.text_field 'query', placeholder: "Enter artist name", class: "form-control" %>
     </div>
-    <div class="form-group col-xs-4">
-      Artist<%= f.check_box :choice, { multiple: true, class: 'form-control' }, 'artist', false %>
-      Track<%= f.check_box :choice, { multiple: true, class: 'form-control' }, 'track', false %>
-      Album<%= f.check_box :choice, { multiple: true, class: 'form-control' }, 'album', false %>
+  </div>
+</div>
+
+ <div class="row">
+
+    <div class="form-check-label col-md-3">
+      Artist<%= f.check_box :choice, { multiple: true, class: 'form-check-input' }, 'artist', false %>
     </div>
 
-    <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
+    <div class="form-check-label col-md-3 col-md-offset-1">
+      Track<%= f.check_box :choice, { multiple: true, class: 'form-check-input' }, 'track', false %>
+    </div>
+
+    <div class="form-check-label col-md-3 col-md-offset-1">
+      Album<%= f.check_box :choice, { multiple: true, class: 'form-check-input' }, 'album', false %>
+    </div>
+
+<div>
+
+  <div class="row">
+      <div class="col-md-4 padding-left-md">
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+  </div>
+
+
+</form>
