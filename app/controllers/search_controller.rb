@@ -12,7 +12,7 @@ require('rspotify')
   end
 
   def show
-  @results = Spotify.artist_search(params[:search]) 
+  @results = Spotify.artist_search(params[:search])
   end
 
   def update
@@ -29,10 +29,18 @@ require('rspotify')
       q = URI.encode(params[:query])
       search_type = URI.encode(params[:choice].first)
       logger.info("Spotify query submitted: " + search_type)
-      @results = RSpotify::Artist.search(q)
+      if search_type = 'track'
+        @results = RSpotify::Track.search(q)
+      elsif search_type = 'artist'
+        @results = RSpotify::Artist.search(q)
+      elsif search_type = 'artist'
+        @results = RSpotify::Album.search(q)
+      end
+
       require('pp')
       pp @results
       render 'results'
+
     else
       render 'index'
       flash[:notice] = "Search incomplete, please try again"

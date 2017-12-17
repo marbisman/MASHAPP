@@ -30,4 +30,7 @@ class Spotify
     p response.first.albums.first.tracks
     return response
   end
+
+  def camelot_key
+  end
 end
