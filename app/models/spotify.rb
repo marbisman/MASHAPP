@@ -12,25 +12,29 @@ class Spotify
 
   def self.artist_search(query)
     p 'Artist search ...'
-    response = RSpotify::Artist.search(query)
+    @response = RSpotify::Artist.search(query)
     p response.first.albums.first.tracks
     return response
   end
 
   def self.track_search(query)
     p 'Track search ...'
-    response = RSpotify::Track.search(query)
+    @response = RSpotify::Track.search(query)
     p response.first.albums.first.tracks
     return response
   end
 
   def self.album_search(query)
     p 'Album search ...'
-    response = RSpotify::Album.search(query)
+    @response = RSpotify::Album.search(query)
     p response.first.albums.first.tracks
     return response
   end
 
   def camelot_key
+  end
+
+  def recommendations
+    @recommendations = RSpotify::Recommendations.generate(seed_tracks: my_fav_tracks.map(&:id))
   end
 end

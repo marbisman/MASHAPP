@@ -29,23 +29,22 @@ require('rspotify')
       q = URI.encode(params[:query])
       search_type = URI.encode(params[:choice].first)
       logger.info("Spotify query submitted: " + search_type)
-      if search_type = 'track'
-        @results = RSpotify::Track.search(q)
-      elsif search_type = 'artist'
-        @results = RSpotify::Artist.search(q)
-      elsif search_type = 'artist'
-        @results = RSpotify::Album.search(q)
-      end
-
+        if search_type = 'track'
+          @results = RSpotify::Track.search(q)
+        elsif search_type = 'artist'
+          @results = RSpotify::Artist.search(q)
+        elsif search_type = 'artist'
+          @results = RSpotify::Album.search(q)
+        end
       require('pp')
       pp @results
+      puts @results.class
+      puts @results[1]
       render 'results'
-
     else
       render 'index'
       flash[:notice] = "Search incomplete, please try again"
     end
-
   end
 
 end
