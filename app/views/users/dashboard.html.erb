@@ -1,0 +1,13 @@
+<h1> Hello, <%= @current_spotify_user.display_name %>, welcome back! </h1>
+
+<div id="results">
+  <% if @results %>
+      <%= @results %>
+      <ul>
+        <% @results.each do |result| %>
+            <li><%= result.name %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+</div>

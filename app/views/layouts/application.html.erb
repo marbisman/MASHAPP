@@ -1,14 +1,94 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MASHAPP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MASHAPP</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- STYLESHEETS -->
+  <!-- HAVE TO INCLUDE VALIDATOR -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application'%>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+      <div>
+        <a class="navbar-brand" href="/"> MASHAPP</a>
+        <div>
+          <div class="nav-item active">
+            <a class="nav-link" href="/auth/spotify">Login</a>
+          </div>
+        </nav>
+<%=yield%>
+
+<footer class="page-footer center-on-small-only unique-color-dark pt-0">
+
+<div class="container mt-5 mb-4 text-center text-md-left">
+<div class="row mt-3">
+
+<div class="col-md-3 col-lg-4 col-xl-3 mb-r">
+<h6 class="title font-bold"><strong>MASHAPP</strong></h6>
+<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+</div>
+
+<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r">
+<h6 class="title font-bold"><strong>Legal</strong></h6>
+<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+<p><a href="https://termsfeed.com/terms-conditions/f1632a33674182c5c9c595f2783c5b1a">Terms</a></p>
+</div>
+
+<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-r">
+<h6 class="title font-bold"><strong>Shoutouts</strong></h6>
+<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+<p>WDI41</p>
+<p>SHIPFAM</p>
+</div>
+
+<div class="col-md-4 col-lg-3 col-xl-3">
+<h6 class="title font-bold"><strong>Contact</strong></h6>
+<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+<p><i class="fa fa-home mr-3"></i>  San Francisco, CA, US</p>
+<p><a href="mailto:maria.arbisman@gmail.com?Subject=MASHAPP" target="_top"><i class="fa fa-envelope mr-3"></i>  Email</a></p>
+<p><a class="icons-sm li-ic" href="https://linkedin.com/in/marbisman"><i class="fa fa-linkedin white-text mr-lg-4">  /marbisman</i></a></p>
+<p><a href="https://github.com/marbisman"><i class="fa fa-github" aria-hidden="true"></i>  @marbisman</i></a></p>
+</div>
+
+
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container-fluid">
+<p>© 2017 Copyright:<strong> MASHAPP</strong></p>
+</div>
+</div>
+
+</footer>
+
+</body>
 </html>
