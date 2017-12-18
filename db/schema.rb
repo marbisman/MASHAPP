@@ -29,4 +29,10 @@ ActiveRecord::Schema.define(version: 20171212200200) do
     t.string "refresh_token"
   end
 
+ActiveRecord::Schema.define(version: 0) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+
 end

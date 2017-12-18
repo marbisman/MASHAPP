@@ -33,7 +33,7 @@ require('rspotify')
           @results = RSpotify::Track.search(q)
         elsif search_type = 'artist'
           @results = RSpotify::Artist.search(q)
-        elsif search_type = 'artist'
+        elsif search_type = 'album'
           @results = RSpotify::Album.search(q)
         end
       require('pp')
